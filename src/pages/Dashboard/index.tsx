@@ -1,6 +1,36 @@
 import React from 'react';
 
-const Dashboard: React.FC = () => <h1>Dashboard</h1>;
+import { FiPower } from 'react-icons/fi';
+import { Container, Header, HeaderContent, Profile } from './styles';
+
+import logoImg from '../../assets/logo.svg';
+import { useAuth } from '../../hooks/auth';
+
+const Dashboard: React.FC = () => {
+  const { signOut, user } = useAuth();
+
+  return (
+    <Container>
+      <Header>
+        <HeaderContent>
+          <img src={logoImg} alt="GoBarber" />
+
+          <Profile>
+            <img src={user.avatar_url} alt={user.name} />
+            <div>
+              <span>Bem vindo,</span>
+              <strong>{user.name}</strong>
+            </div>
+          </Profile>
+
+          <button type="button" onClick={signOut}>
+            <FiPower />
+          </button>
+        </HeaderContent>
+      </Header>
+    </Container>
+  );
+};
 // This route can only be acessible if the user is logged in
 // check the routes index file to see how this is done
 export default Dashboard;
