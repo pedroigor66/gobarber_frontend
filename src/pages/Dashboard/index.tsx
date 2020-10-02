@@ -48,16 +48,14 @@ const Dashboard: React.FC = () => {
           <NextAppointment>
             <strong>Atendimento a seguir</strong>
             <div>
-              <img
-                src="https://avatars3.githubusercontent.com/u/29211046?s=460&u=7f5b419fdfb713977381088ca591ad81873be634&v=4"
-                alt="Pedro Igor"
-              />
+              <img src={user.avatar_url} alt={user.name} />
+
+              <strong>{user.name}</strong>
+              <span>
+                <FiClock />
+                08:00
+              </span>
             </div>
-            <strong>Pedro Igor</strong>
-            <span>
-              <FiClock />
-              08:00
-            </span>
           </NextAppointment>
         </Schedule>
         <Calendar />

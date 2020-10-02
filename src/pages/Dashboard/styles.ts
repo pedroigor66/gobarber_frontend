@@ -14,7 +14,7 @@ export const HeaderContent = styled.div`
   align-items: center;
   /* the styling for the first img bellow, meaning the logo img */
   > img {
-    heigth: 80px;
+    height: 80px;
   }
 
   button {
